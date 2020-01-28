@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <script>
+
+
+        class User{
+            constructor(firstName, lastName, userHobbies){
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.userHobbies = userHobbies; 
+            }
+
+            getFullName = () => {
+                return `${this.firstName} ${this.lastName}`;
+            }
+        }
+
+        let John = new User("John", "Davis", ["soccer", "volleyball"]);
+        console.log(John);
+        console.log(John.getFullName());
+        let Nazariy = new User("Nazariy", "Dumanskyy", ["dancing"]);
+        console.log("Nazariy: ", Nazariy);
+
+
+        let user = {
+            firstName: "John",
+            lastName: "Davis",
+            setPassword: (user,password) => {
+                user.password = password;
+            },
+            "user Hobbies": [
+                "soccer",
+                "volleyall"
+            ],
+            getFullName: (user) => {
+                return `${user.firstName} ${user.lastName}`;
+            }
+        }
+        
+        //Creating a Class
+        //this values
+        //Initialize an Object
+        //Constructor
+        </script>
+    </body>
+</html>
