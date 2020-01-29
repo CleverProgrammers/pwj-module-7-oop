@@ -37,10 +37,12 @@ let beats = {
     }
 }
 
-document.addEventListener("keydown",(event)=>{
+triggerBeat = (event) => {
     let code = event.keyCode;
     if(code in beats){
         beats[code].button.select();
         beats[code].beat.play();
     }
-})
+}
+
+document.addEventListener("keydown", triggerBeat);
