@@ -23,7 +23,7 @@ class Button {
     }
 
     createTransitionEndListener = () => {
-        this.element.addEventListener("transitionend", ()=>{
+        this.element.addEventListener("keyup", ()=>{
             this.deselect();
         })
     }
