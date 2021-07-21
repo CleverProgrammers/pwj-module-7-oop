@@ -8,6 +8,7 @@ class Post {
 
     getIndividual(postId) {
         /** get individual Posts */
+       console.log(postId);
        const posts = this.readData();
        const foundPost = posts.find((post) => post.id = postId)
        return foundPost;  
@@ -20,8 +21,7 @@ class Post {
     }
 
     storeData (rawdata) {
-        let data = JSON.stringify(rawdata);
-        fs.writeFileSync(path, data);
+        fs.writeFileSync(path, JSON.stringify(rawdata));
     }
 
     readData() {
