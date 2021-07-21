@@ -5,14 +5,6 @@ class Post {
         /** Get Posts */
         return this.readData();
     }
-
-    getIndividual(postId) {
-        /** get individual Posts */
-       console.log(postId);
-       const posts = this.readData();
-       const foundPost = posts.find((post) => post.id = postId)
-       return foundPost;  
-    }
    
     addNewPost(newPost) {
        const currentData = this.readData();
@@ -20,15 +12,23 @@ class Post {
        this.storeData(currentData);
     }
 
-    storeData (rawdata) {
-        fs.writeFileSync(path, JSON.stringify(rawdata));
-    }
+    
 
     readData() {
-        let rawdata = fs.readFileSync(path);
-        let posts = JSON.parse(rawdata);
-        
-        return posts;
+        try {
+            return JSON.parse(fs.readFileSync(path, 'utf8'));
+        } catch (err) {
+            console.error(err)
+            return false;
+        }
+    }
+
+    storeData (currentData) {
+        try {
+            fs.writeFileSync(path, JSON.stringify(currentData));
+        } catch (err) {
+            console.error(err)
+        }
     }
 
 } 
